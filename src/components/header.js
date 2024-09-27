@@ -2,13 +2,13 @@ import { useState, useContext } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useonlinestatus";
-import UserContext from "../utils/usercontext";
+
 import { useSelector } from "react-redux";
 
 const Header = () => {
   const [btnNameReact, setBtnNameReact] = useState("login");
   const onlineStatus = useOnlineStatus();
-  const { loggedInUser } = useContext(UserContext);
+ 
   const cartItems = useSelector((store) => store.cart.items);
 
   return (
@@ -57,7 +57,7 @@ const Header = () => {
         >
           {btnNameReact}
         </button>
-        <li className="px-4 font-bold text-gray-700">{loggedInUser}</li>
+        <li className="px-4 font-bold text-gray-700">Pankaj Bisht</li>
       </nav>
     </header>
   );
