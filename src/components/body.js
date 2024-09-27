@@ -4,7 +4,7 @@ import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useonlinestatus";
-import UserContext from "../utils/userContext";
+
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([resList]);
@@ -38,7 +38,7 @@ const Body = () => {
   const onlineStatus = useOnlineStatus();
 
 
-  const { loggedInUser, setUserName } = useContext(UserContext);
+ 
 
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
@@ -71,7 +71,7 @@ const Body = () => {
           <input
             type="text"
             className="border border-gray-300 p-2 rounded-md"
-            value={loggedInUser}
+            value="Pankaj Bisht"
             onChange={(e) => setUserName(e.target.value)}
           />
         </div>
