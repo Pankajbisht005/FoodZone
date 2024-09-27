@@ -7,7 +7,6 @@ import { createBrowserRouter , Outlet, RouterProvider } from "react-router-dom";
 import Contact from "./components/contsact";
 import Error from "./components/error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import UserContext from "./utils/usercontext";
 import { Provider } from "react-redux";
 import appStore from "./utils/appstore";
 import Cart from "./components/cart";
@@ -32,13 +31,11 @@ const AppLayout = () => {
   
     return(
      <Provider store={appStore}>
-       <UserContext.Provider  value={{loggedInUser: userName,setUserName}}>
           <div className="app">
         <Header />
         <Outlet />
         <Footer/>
          </div>
-      </UserContext.Provider>
      </Provider>
        );
 }
